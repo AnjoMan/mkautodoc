@@ -224,7 +224,7 @@ class AutoDocProcessor(BlockProcessor):
         docstring_elem = etree.SubElement(elem, "div")
         docstring_elem.set("class", "autodoc-docstring")
         md = Markdown(extensions=self.md.registeredExtensions)
-        docstring_elem.text = md.convert(docstring)
+        docstring_elem.text = self.md.convert(docstring)
 
     def render_members(
         self, elem: etree.Element, item: typing.Any, members: typing.List[str] = None
