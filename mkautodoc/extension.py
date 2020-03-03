@@ -223,7 +223,6 @@ class AutoDocProcessor(BlockProcessor):
     ) -> None:
         docstring_elem = etree.SubElement(elem, "div")
         docstring_elem.set("class", "autodoc-docstring")
-
         md = Markdown(extensions=self.md.registeredExtensions)
         docstring_elem.text = md.convert(docstring)
 
